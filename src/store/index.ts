@@ -1,14 +1,11 @@
 import { createStore } from 'vuex'
+import { defineAsyncComponent} from "vue";
+// @ts-ignore
+const User = defineAsyncComponent(()=> import('Federation/User'))
+import {Test} from "@/store/modules/test";
+// @ts-ignore
+// import  User from 'Federation/User'
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+    modules : { User, Test }
 })

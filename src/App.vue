@@ -1,11 +1,22 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <HelloWorld />
+  <Header />
+  <Side />
 </template>
+<script>
+import { defineComponent, defineAsyncComponent } from 'vue'
+import Header from '@/components/HeaderComp'
+import Side from '@/components/SideComp'
+const HelloWorld = defineAsyncComponent(() => import ('Federation/HelloWorld.vue'))
 
+export default defineComponent({
+  components: {
+    Header,
+    Side,
+    HelloWorld,
+  }
+})
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

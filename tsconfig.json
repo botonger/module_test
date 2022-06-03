@@ -7,11 +7,13 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
+//    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "rootDirs": ["Federation/Store"],
     "types": [
       "webpack-env"
     ],
@@ -32,7 +34,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "**/*.d.ts"
   ],
   "exclude": [
     "node_modules"
