@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <header>
-      <div @click="pop" class="logo">🦄</div>
-      <ul class="header-menu">
-        <li v-for="m in navMenu" :key="m">
-          <router-link :to="{ name: m.toLowerCase()}">{{ m }}</router-link>
-        </li>
-      </ul>
-      <button style="display: inline" @click="store.commit('User/IncreaseCount')">store test</button>
-      <div style="display: inline" >{{ store.state.User.count }}</div>
-<!--      <button @click="store.commit('User/')"></button>-->
-    </header>
-  </div>
+  <header>
+    <div @click="pop" class="logo">🦄</div>
+    <ul class="header-menu">
+      <li v-for="m in navMenu" :key="m">
+        <router-link :to="{ name: m.toLowerCase()}">{{ m }}</router-link>
+      </li>
+    </ul>
+    <button style="display: inline; margin-left: 50px;" @click="store.commit('User/IncreaseCount')">store test</button>
+    <div style="display: inline" >{{ store.state.User.count }}</div>
+  </header>
 </template>
 <script setup>
 import {defineAsyncComponent, ref} from "vue"
@@ -39,8 +36,8 @@ function pop(){
 }
 header {
   position: fixed;
-  left: 0;
-  top: 0;
+  /*left: 0;*/
+  /*top: 0;*/
   width: 100%;
   height: 50px;
   box-shadow: 1px 1px 2px 1px lightgray;
@@ -55,7 +52,7 @@ header {
   line-height: 50px;
 }
 .header-menu li {
-  margin-right: 1rem;
+  margin-left: 1rem;
   font-size: 0.9rem;
 }
 .header-menu li * {

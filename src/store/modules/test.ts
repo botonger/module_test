@@ -1,6 +1,11 @@
 export const Test = {
     namespaced: true,
     state: {
-        test: 29999,
+        count: 29999,
     },
+}
+export const Test2={
+    state:{
+        hoho: 1111,
+    }
 }

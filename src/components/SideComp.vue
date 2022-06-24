@@ -15,7 +15,8 @@ const sideMenus = ref(['Source', 'Commits', 'Branches', 'Pull requests',
 .side-container {
   position: fixed;
   z-index: -111;
-  width: 220px;
+  /*left: 0;*/
+  width: 200px;
   display:flex;
   flex-direction: column;
   height: 100vh;
@@ -25,10 +26,12 @@ const sideMenus = ref(['Source', 'Commits', 'Branches', 'Pull requests',
 .side-menu {
   list-style: none;
   margin-top: 70px;
+  text-align: justify;
 }
 .side-menu * {
   margin-bottom: 1.2rem;
-  margin-left: -50%;
-  transform: translate(10%, 0%);
+  margin-left: 50%;
+  /*margin-left: -50%;*/
+  transform: translate(-50%, 0);
 }
 </style>

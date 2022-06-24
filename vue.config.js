@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 const webpack = require('webpack')
+const deps = require('./package.json').dependencies;
 
 module.exports = defineConfig({
   pages: {
@@ -17,6 +18,8 @@ module.exports = defineConfig({
   //Uncaught (in promise) ChunkLoadError: Loading chunk node_modules_vue_dist_vue_runtime_esm-bundler_js-_49481 failed.
   publicPath: 'auto',
   configureWebpack: {
+    //없으면 오류 발생
+    //remoteEntry.js:1978 Uncaught (in promise) ChunkLoadError: Loading chunk node_modules_vue_dist_vue_runtime_esm-bundler_js-_49480 failed.
     optimization: {
       splitChunks: false,
     },
@@ -33,6 +36,7 @@ module.exports = defineConfig({
             './Modal.vue': './src/components/ModalTemplate.vue',
           },
           shared: {
+            ...deps,
             vue: {
               singleton: true,
               // eager: true,

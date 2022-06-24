@@ -1,5 +1,4 @@
 <template>
-  <HelloWorld />
   <Header />
   <Side />
 </template>
@@ -8,22 +7,32 @@ import { defineComponent, defineAsyncComponent } from 'vue'
 import Header from '@/components/HeaderComp'
 import Side from '@/components/SideComp'
 const HelloWorld = defineAsyncComponent(() => import ('Federation/HelloWorld.vue'))
+const Layout = defineAsyncComponent(() => import ('Federation/Layout.vue'))
 
 export default defineComponent({
   components: {
     Header,
     Side,
-    HelloWorld,
+    // HelloWorld,
   }
 })
 </script>
 <style>
+.ho{
+  position: absolute;
+  margin-top: 50px;
+  left: 200px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 nav {
