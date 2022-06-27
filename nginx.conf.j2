@@ -1,0 +1,63 @@
+events {
+  worker_connections  4096;  ## Default: 1024
+}
+
+http {
+   map $http_upgrade $connection_upgrade {
+       default upgrade;
+      '' close;
+   }
+
+   include /etc/nginx/mime.types;
+
+   server {
+      listen 80;
+
+      location / {
+         root /usr/share/nginx/html;
+        index  index.html index.htm;
+
+      }
+    }
+}
+
+# http {
+#     upstream federation {
+#         server localhost:3001;
+#         server localhost:3002;
+#     }
+#     server {
+#         listen       80;
+#         server_name  localhost;
+
+#         location / {
+
+#         error_page   500 502 503 504  /50x.html;
+#         location = /50x.html {
+#             root   html;
+#         }
+#     }   
+#     server {
+#         listen       3001;
+#         listen       localhost:3001;
+#         server_name  federation  alias  federation;
+
+#         location / {
+#             root   /Users/cheyenneshin/Desktop/oke-test/vue-cli-mf/federation/dist;
+#             index  index.html index.htm;
+#         }
+#     }
+
+#     server {
+# 	listen	3002;
+#         listen  localhost:3002;
+#         server_name layouts  alias  layouts;
+
+#         location / {
+# 	    root   /Users/cheyenneshin/Desktop/oke-test/vue-cli-mf/layouts/dist;
+# 	    index  index.html index.htm;
+# 	}
+#     }
+
+#     include servers/*;
+# }
