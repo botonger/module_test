@@ -14,7 +14,7 @@
 import {defineAsyncComponent, ref} from "vue"
 import { useStore} from "vuex"
 const store = useStore()
-const navMenu = ref(['YoWork', 'Repositories', 'Projects', 'More'])
+const navMenu = ref(['YourWork', 'Repositories', 'Projects', 'More'])
 function pop(){
   alert('❤️')
 }
